@@ -1,0 +1,310 @@
+/* Eliminar márgenes y rellenos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo del body y otros ajustes globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+}
+
+/* Header y Navbar */
+header {
+    background-color: #0460D9; /* Color azul del navbar */
+    padding: 10px 0;  /* Padding solo en el eje vertical */
+    width: 100%;  /* Asegura que el header ocupe todo el ancho */
+}
+
+/* Navbar en la parte superior */
+.navbar {
+    display: flex;
+    justify-content: flex-end;  /* Alinear los iconos a la derecha */
+    padding: 0 20px;  /* Padding interno para que los iconos no estén pegados al borde */
+    width: 100%;  /* Asegura que la barra de navegación ocupe todo el ancho */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Aumentar el tamaño de los iconos y ajustarlos para que no haya espacio extra */
+nav a {
+    color: white;
+    margin: 0 15px;  /* Más espacio entre los iconos */
+    text-decoration: none;
+    font-size: 40px;  /* Tamaño más grande para los iconos */
+}
+
+/* Efecto de agrandar los iconos al pasar el ratón */
+nav a i {
+    font-size: 40px;
+    transition: transform 0.3s;
+}
+
+nav a:hover i {
+    transform: scale(1.2); /* Aumentar un poco más al hacer hover */
+}
+
+.hero {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+    background-image: url(img/fondodelheader.jpg);
+    background-size: cover;
+    /*background-size: cover;
+    background-image: linear-gradient(to bottom, #82A8E5, #0476D9);*/
+    color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    animation: changeBackground 30s infinite;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo {
+    width: 250px;  /* Tamaño del logo ajustado a 250px */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: left;
+    margin: 0;
+}
+
+.company-info {
+    display: flex;
+    justify-content: space-between;  /* Para poner imagen y texto uno al lado del otro */
+    padding: 40px;
+    background-color: #f0f4ff;
+    margin-top: 10px;  /* Espacio entre la sección .hero y esta nueva sección */
+}
+
+.company-image img {
+    width: 100%;  /* Hace que la imagen ocupe todo el ancho de su contenedor */
+    max-width: 600px;  /* Limita el ancho máximo de la imagen */
+    height: auto;
+    border-radius: 10px;  /* Le da bordes redondeados a la imagen */
+}
+
+.company-text {
+    width: 60%;  /* La sección de texto ocupa el 60% del espacio disponible */
+    padding-left: 20px;  /* Espacio entre la imagen y el texto */
+    text-align: justify;  /* Justifica el texto */
+}
+
+.products-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f4ff;
+}
+
+.products-section h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bb8;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;  /* Esconde las imágenes fuera del contenedor */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease; /* Transición suave para el movimiento de las imágenes */
+}
+
+.carousel-images img {
+    width: 300px;
+    height: 200px;
+    margin: 0 10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo para la sección de "Nuestras Instalaciones" */
+.facilities {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f4ff;
+}
+
+.facilities h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bb8;
+}
+
+.facilities-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Cuatro imágenes en fila */
+    gap: 20px;  /* Espacio entre las imágenes */
+    margin-top: 20px;
+}
+
+.facilities-images img {
+    width: 100%;  /* Las imágenes ocuparán todo el ancho de su contenedor */
+    height: 200px;  /* Altura fija */
+    object-fit: cover;  /* Asegura que la imagen se recorte correctamente */
+    border-radius: 8px;  /* Bordes redondeados para un estilo más moderno */
+    transition: transform 0.3s ease;  /* Añadir transición para el hover */
+}
+
+/* Efecto hover sobre las imágenes */
+.facilities-images img:hover {
+    transform: scale(1.05);  /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Añade una sombra suave */
+}
+
+/* Estilo para la sección "Nuestra Ubicación" */
+.location {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f4ff;
+}
+
+.location h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bb8;
+}
+
+/* Estilo para el contenedor del mapa */
+.map-container {
+    max-width: 800px;  /* Ancho máximo del mapa */
+    margin: 0 auto;    /* Centrado en la página */
+    height: 400px;     /* Altura media para el mapa */
+}
+
+iframe {
+    width: 100%;       /* Hacer que el mapa ocupe el 100% del contenedor */
+    height: 100%;      /* Hacer que el mapa ocupe el 100% de la altura disponible */
+    border-radius: 8px; /* Bordes redondeados para el mapa */
+    border: none;     /* Eliminar borde predeterminado */
+}
+
+/* Estilo general del footer */
+footer {
+    background-color: #007bb8;  /* Fondo azul similar al del header */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Contenedor principal del footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Permite que el contenido se ajuste en pantallas pequeñas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada sección del footer */
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Estilos para los subtítulos */
+.footer-section h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Estilo para los enlaces */
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los textos de los contactos */
+.footer-section ul li {
+    font-size: 1em;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;  /* Pone las secciones una debajo de la otra en pantallas pequeñas */
+        align-items: center;  /* Centra el contenido */
+    }
+
+    .footer-section {
+        text-align: center;  /* Centra el texto dentro de cada sección */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .company-info {
+        flex-direction: column;  /* En pantallas pequeñas, los elementos se apilan verticalmente */
+        align-items: center;
+    }
+
+    .company-text {
+        width: 100%;  /* El texto ocupa todo el ancho disponible en pantallas pequeñas */
+        padding-left: 0;
+    }
+
+    .company-image img {
+        max-width: 100%;  /* La imagen ocupa el 100% del ancho en pantallas pequeñas */
+    }
+}
